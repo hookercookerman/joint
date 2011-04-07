@@ -1,7 +1,7 @@
 module Joint
   module InstanceMethods
     def grid
-      @grid ||= Mongo::Grid.new(database)
+      @grid ||= Mongo::Grid.new(db)
     end
 
     private
