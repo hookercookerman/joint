@@ -14,10 +14,10 @@ module Joint
       after_save     :destroy_nil_attachments
       before_destroy :destroy_all_attachments
 
-      key :"#{name}_id",   ObjectId
-      key :"#{name}_name", String
-      key :"#{name}_size", Integer
-      key :"#{name}_type", String
+      field :"#{name}_id",   :type => BSON::ObjectId
+      field :"#{name}_name", :type =>String
+      field :"#{name}_size", :type => Integer
+      field :"#{name}_type", :type => String
 
       validates_presence_of(name) if options[:required]
 
